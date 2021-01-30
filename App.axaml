@@ -8,6 +8,8 @@
 
     <Application.Styles>
         <FluentTheme Mode="Light"/>
+        <StyleInclude Source="avares://Material.Avalonia/Material.Avalonia.Templates.xaml" />
+        <StyleInclude Source="avares://Material.DataGrid/DataGrid.xaml"/>
     </Application.Styles>
     
 </Application>
