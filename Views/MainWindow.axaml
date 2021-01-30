@@ -7,11 +7,28 @@
         x:Class="DockerNoCommands.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="DockerNoCommands">
-
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+        
+        <DockPanel>
+                <TabControl>
+                        <TabItem Header="Animations">
+                        </TabItem>
+                        <TabItem Header="Transitions">
+                        </TabItem>
+                        <TabItem Header="Clipping">
+                        </TabItem>
+                        <TabItem Header="Drawing">
+                        </TabItem>
+                        <TabItem Header="SkCanvas">
+                        </TabItem>
+                        <TabItem Header="RenderTargetBitmap">
+                        </TabItem>
+                        <TabItem Header="WriteableBitmap">
+                        </TabItem>
+                        <TabItem Header="GlyphRun">
+                        </TabItem>
+                        <TabItem Header="LineBounds">
+                        </TabItem>
+                </TabControl>
+        </DockPanel>
+        
 </Window>
