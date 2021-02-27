@@ -18,8 +18,11 @@ rootView.setObjectName("rootView");
 
 // ORANGE
 const statsView = new QWidget();
-const statsList = new QListWidget();
+
+const statsListView =
+
 // statsList.addItem()
+statsView.layout?.addWidget(new QListView())
 statsView.setObjectName("statsView");
 
 // BLUE
