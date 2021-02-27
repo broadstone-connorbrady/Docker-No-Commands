@@ -1,31 +1,56 @@
-import { QMainWindow, QWidget, QLabel, FlexLayout, QPushButton, QIcon } from '@nodegui/nodegui';
+import {
+  QMainWindow,
+  QWidget,
+  QLabel,
+  FlexLayout,
+  QPushButton,
+  QIcon,
+  QGridLayout,
+  QListView,
+  QListWidget
+} from '@nodegui/nodegui';
 import logo from '../assets/logox200.png';
+import {root} from "postcss";
+
+const rootView = new QWidget();
+rootView.setLayout(new QGridLayout());
+rootView.setObjectName("rootView");
+
+// ORANGE
+const statsView = new QWidget();
+const statsList = new QListWidget();
+// statsList.addItem()
+statsView.setObjectName("statsView");
+
+// BLUE
+const imagesView = new QWidget();
+imagesView.setObjectName("imagesView");
+
+// TEAL
+const containersView = new QWidget();
+containersView.setObjectName("containersView");
+
+// PINK
+const volumesView = new QWidget();
+volumesView.setObjectName("volumesView");
+
+const networksView = new QWidget();
+networksView.setObjectName("networksView");
+
+rootView.layout?.addWidget(statsView, 0, 0, -1, 1);
+rootView.layout?.addWidget(containersView, 0, 1, 1 ,1);
+rootView.layout?.addWidget(imagesView, 0, 2, 1 ,1);
+
+rootView.layout?.addWidget(volumesView, 1, 1, 1, 1);
+rootView.layout?.addWidget(networksView, 1, 2, 1, 1);
 
 const win = new QMainWindow();
-win.setWindowTitle("Hello World");
+win.setWindowTitle("Docker No Commands");
+win.setCentralWidget(rootView);
 
-const centralWidget = new QWidget();
-centralWidget.setObjectName("myroot");
-const rootLayout = new FlexLayout();
-centralWidget.setLayout(rootLayout);
 
-const label = new QLabel();
-label.setObjectName("mylabel");
-label.setText("Hello");
 
-const button = new QPushButton();
-button.setIcon(new QIcon(logo));
 
-const label2 = new QLabel();
-label2.setText("World");
-label2.setInlineStyle(`
-  color: red;
-`);
-
-rootLayout.addWidget(label);
-rootLayout.addWidget(button);
-rootLayout.addWidget(label2);
-win.setCentralWidget(centralWidget);
 win.setStyleSheet(
   `
     #myroot {
@@ -38,6 +63,21 @@ win.setStyleSheet(
       font-size: 16px;
       font-weight: bold;
       padding: 1;
+    }
+    #imagesView {
+      background-color: #33BAFF; 
+    }
+    #containersView {
+      background-color: #33FFA8; 
+    }
+   #statsView {
+      background-color: #FFCA33; 
+    }
+   #volumesView {
+      background-color: #FD33FF; 
+    }
+   #networksView {
+      background-color: #333BFF;
     }
   `
 );
